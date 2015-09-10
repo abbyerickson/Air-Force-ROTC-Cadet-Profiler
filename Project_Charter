@@ -1,0 +1,46 @@
+
+     Air Force ROTC
+     CADET PROFILE
+
+
+Simone May, Abby Erickson, Dashaun Jones, Cody Tyson
+
+ 
+
+Problem Statement: 
+Air Force ROTC cadets' flight rankings and ROTC course grades are determined by their performance, attendance, and peer evaluations throughout the academic term.  Currently, this information is documented on paper and is not backed up, making the system inefficient and unstable.  To eliminate these problems an application is needed for Air Force ROTC cadets and instructors to electronically submit and review the aforementioned information.
+
+Project Objectives
+1.	Allow users to create individual accounts with varying levels of privileges based off of classification:
+a.	Cadet - lower privileges
+b.	Flight Commander - higher privileges
+2.	Users labeled "Cadet" will be able to submit flight rankings, approve meetings, input profile information
+a.	Name
+b.	Age
+c.	GPA
+d.	Physical Fitness Test Score
+e.	Current Flight Position
+3.	Users labeled "Flight Commander" can view all information inputted by Cadets in their flight, notify Cadets of meeting times, and calculate the average flight ranking of each Cadet.
+4.	Develop a database to store the information input by Cadets and Flight Commanders.
+Stake-Holders
+1.	Users
+a.	Air Force ROTC Detachment Commander
+b.	Air Force ROTC Cadets
+c.	Air Force ROTC Flight Commanders
+2.	Developers
+a.	Abigail Erickson
+b.	DaShaun Jones
+c.	Simone May
+d.	Cody Tyson
+3.	Project Manager
+a.	Abigail Erickson
+4.	Project Owner
+a.	Abigail Erickson
+b.	DaShaun Jones
+c.	Simone May
+d.	Cody Tyson
+Deliverables
+An easy to use mobile application that gives Air Force ROTC cadets and instructors the tools to electronically submit and review information. The deliverables are:
+1.	An Android based application using Java
+2.	A data-base for storing user input and retrieving data for the application
+3.	An API for further development and extensions
