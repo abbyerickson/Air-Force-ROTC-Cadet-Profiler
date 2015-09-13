@@ -1,0 +1,52 @@
+Problem Statement
+Air Force ROTC cadets' flight rankings and ROTC course grades are determined by their performance, attendance, and peer evaluations throughout the academic term.  Currently, this information is documented on paper and is not backed up, making the system inefficient and unstable.  To eliminate these problems an application is needed for Air Force ROTC cadets and instructors to electronically submit and review the aforementioned information.
+
+Background Information
+Air Force ROTC cadets take required ROTC classes each semester and participate in various activities.  Cadets are evaluated during these settings by their flight commander and peers.  A cadet’s evaluation is based upon on several criteria: performance, attendance, and peer feedback.  The evaluations are normally hand written or typed and stored in a cadet’s individual folder.  At the semester’s end, the flight commander reviews each cadet’s folder to determine their overall flight ranking and course grade.  Our application will be used by AFROTC flight commanders and cadets at Purdue University and give them the ability to electronically submit and review a cadet’s evaluations.  
+Currently, there are no similar applications in existence.  As stated, the current system requires hand-written or typed evaluations that are stored in folders for future reference and the documentation is not backed up.  The manual system is time consuming since most documentation is hand written and must be sorted through manually.  The Cadet Profiler addresses this issue by providing electronic submissions.  Another limitation is the poor organization.  The documentation is organized into cadet folders, however, the documents within the folder and sorted randomly.  This issue is addressed by collecting documentation in a database then categorizing the data into cadet user accounts by date and category.  The use of an online database also provides a backup of the documentation.  
+
+Requirements
+	Functional Requirements:
+1.	As a user I would like a scheduling feature
+2.	As a user I would like to upload a profile picture
+3.	As a user I would like the ability to rank the cadets
+4.	As a user I would like the ability to locate my username and password if I forgot either or
+5.	As a user with flight commander privileges I would like the ability to enter the cadets’ GPA
+6.	As a user with flight commander privileges I would like the ability to enter the cadets’ Physical Training Assessment score
+7.	As a user I would like the ability to distinguish roles in the application, which users are cadets and which users are flight commanders
+8.	As a user with flight commander privileges I would like to view all of the information on a cadet’s user profile at any time
+9.	As a user with flight commander privileges I would like to 
+10.	As a user I would like GPA, ranking, PFA scores and other private information to not be viewable by other cadets
+11.	As a user I would like to be able to privately message our flight commanders directly or other cadets within my flight
+12.	As a user I would like to be able to post public announcements, and links to other pages as necessary.
+13.	As a user I would like to automatically notify cadets within my flight of announcements that I post
+14.	As a user I would like to create events, such as meetings, with a designated time and date
+15.	As a user I would like to either commit or decline events created by members within my flight
+16.	As a developer I would like the application to send reminders to the user’s phone of events they committed to attending
+17.	As a user I would like to specify how many notifications the application will send, and at what times
+18.	As a user I would like to view the contact information of other users within my flight
+19.	As a user I would like to view my flight ranking and ROTC course grades from past semesters
+20.	As a developer I would like a feature for an administrator
+21.	As a developer I would like to make sure there is a feature to create user profiles
+22.	As a developer I would like the users to have the ability to change their password
+23.	As a developer I would like the user to be able to 
+24.	As a developer I would like user feedback
+25.	As a developer I would like to switch the application to offline mode if no wifi/cellular data connection is detected
+26.	As an administrator I would like to automatically designate the roles of cadet and flight commander to each user
+27.	As an administrator I would like to group cadet users into their respective flight
+28.	As an administrator I would like to delete profiles for cadets that drop out of the ROTC program
+29.	As an administrator I would like to attach existing Purdue career accounts to these accounts to better be able to distinguish between the roles.
+30.	As an administrator I would like to compute the average peer ranking for each cadet 
+31.	As a developer I would like the GUI for the application to be user-friendly 
+
+	Non-Functional Requirements:
+1.	As a developer I would like the system to perform well and not experience crashes
+2.	As a user I would like to ensure the application is secure
+3.	As a developer I would like the application run efficiently and quickly, the server response time should be 500ms or less.
+4.	As a user I would like to make sure the program is user friendly and pleasing to the eye.
+5.	As a developer I would like to allow users to download this application for free
+6.	As a developer I would like to ensure that future features are not overly difficult to implement into the existing system.
+7.	As a developer I would like the system to be able to handle 50 users at once.
+8.	As a user I would like to develop the application using  virtual machines (database, remote code execution, etc).
+9.	As a developer I would like to be able to transfer this application to not only be mobile but also web applicable.
+10.	As a developer I would like to have public documentation for the API methods
