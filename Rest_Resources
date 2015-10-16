@@ -1,0 +1,114 @@
+package com.register.jersey;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+//Path: http://localhost/<appln-folder-name>/login
+@Path("/login")
+
+public class Login {
+	    // HTTP Get Method
+	    @GET
+	    // Path: http://localhost/<appln-folder-name>/login/dologin
+	    @Path("/dologin")
+	    // Produces JSON as response
+	    @Produces(MediaType.APPLICATION_JSON) 
+	    // Query parameters are parameters: http://localhost/<appln-folder-name>/login/dologin?username=abc&password=xyz
+	    public String doLogin(@QueryParam("username") String username, @QueryParam("password") String password){
+	        String response = "";
+	        if(checkCredentials(username, password)){
+	            response = Helper.constructJSON("login",true);
+	        }else{
+	            response = Helper.constructJSON("login", false, "Incorrect Email or Password");
+	        }
+	    return response;        
+	    }
+	 
+	    /*
+	      Method to check whether the entered credential is valid
+	     */
+	    private boolean checkCredentials(String username, String password){
+	        boolean isRegistered = false;
+	        if(Helper.isNotNull(username) && Helper.isNotNull(password)){
+	            try {
+	                isRegistered = DBConnection.checkCredentials(username, password);
+	            } catch (Exception e) {
+	                isRegistered = false;
+	            }
+	        }else{
+	            isRegistered = false;
+	        }
+	 
+	        return isRegistered;
+	    }
+}
+
+package com.register.jersey;
+
+import java.sql.SQLException;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+//Path: http://localhost/<appln-folder-name>/register
+@Path("/register")
+
+public class Register {
+	 // HTTP Get Method
+    @GET
+    // Path: http://localhost/<appln-folder-name>/register/doregister
+    @Path("/doregister")  
+    // Produces JSON as response
+    @Produces(MediaType.APPLICATION_JSON) 
+    // Query parameters are parameters: http://localhost/<appln-folder-name>/register/doregister?name=pqrs&username=abc&password=xyz
+    public String doLogin(@QueryParam("name") String name, @QueryParam("username") String username, @QueryParam("password") String password){
+        String response = "";
+        int isCreated = registerUser(name, username, password);
+        if(isCreated == 0){
+            response = Helper.constructJSON("register",true);
+        }else if(isCreated == 1){
+            response = Helper.constructJSON("register",false, "You are already registered");
+        }//else if(isRegistered == 2){
+            //response = Helper.constructJSON("register",false, "Special Characters are not allowed in Username and Password");
+        else if(isCreated == 3){
+            response = Helper.constructJSON("register",false, "Error occured");
+        }
+        return response;
+ 
+    }
+ 
+    private int registerUser(String name, String username, String password){
+        int isInserted = 3;
+        if(Helper.isNotNull(username) && Helper.isNotNull(password)){
+            try {
+                if(DBConnection.insertUser(name, username, password)){
+                    System.out.println("RegisterUSer if");
+                    isInserted = 0;
+                }
+            } catch(SQLException sqle){
+                System.out.println("RegisterUSer catch sqle");
+                //When Primary key violation occurs that means user is already registered
+                if(sqle.getErrorCode() == 1062){
+                    isInserted = 1;
+                } 
+                //When special characters are used in name,username or password
+                /*else if(sqle.getErrorCode() == 1064){
+                    System.out.println(sqle.getErrorCode());
+                    isInserted = 2;
+                }*/
+            }
+            catch (Exception e) {
+                // TODO Auto-generated catch block
+                isInserted = 3;
+            }
+        }else{
+            isInserted = 3;
+        }
+        return isInserted;
+    } 
+}
+
