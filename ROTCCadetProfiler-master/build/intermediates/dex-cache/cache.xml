@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dashaunjones/Desktop/Purdue/COMP SCI/Development/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-261a55cf16c9269908021d8df8785bb8c6f8e735.jar" />
+    </item>
+    <item
+        jar="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-c51361f0ad01efb2e53270211234b0505d1927bd.jar" />
+    </item>
+    <item
+        jar="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/pre-dexed/debug/classes-876e0997d523239b1614d9bd51f59cca33558eef.jar" />
+    </item>
+    <item
+        jar="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/pre-dexed/debug/classes-648c9e6c558afe6d8848517b06f0ee8589e1ee8f.jar" />
+    </item>
+    <item
+        jar="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/dashaunjones/Desktop/ROTCCadetProfiler-master/app/build/intermediates/pre-dexed/debug/classes-5c247199ce28d7fcb9e327b763988b024e3a95f4.jar" />
+    </item>
+
+</items>
