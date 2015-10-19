@@ -1,0 +1,134 @@
+Sprint Overview 
+Overview: 
+     	Our team is in our second sprint. Our goal is add additional functionality to the application. The user will be able to perform actions such as customizing a profile, inputting peer rankings, viewing other profiles, and scheduling events.
+Below we have described the user stories we are going to tackle for the second sprint. 
+        Scrum Master: Abby Erickson
+        Scrum Meeting Time: Monday 12:30 - 1:30 PM, Wednesday 12:30 - 1:30 PM, Friday 12:30 - 1:30 PM, Sunday 1:00 PM
+     	Risks/Challenges: Our biggest challenge is dividing the work evenly amongst the members.  Additionally, we must work together in order to ensure that our individual work will work properly when combined i.e. the frontend components connect to the server which communicates with the database. We must test that our individual work is compatible with the other components long before the Sprint Review. Therefore, it is essential that each member attend each team meeting and alert the group when difficulties arise.
+
+Current Sprint Detail
+User Story: As a developer, I want to add the log-out button w/ functionality.
+Task Description	Estimated Time (Hours)	Owner
+Add logout button	
+1	 
+Cody
+Server should receive message to log user out	 
+2	 
+Cody/DaShaun
+Cause app to save any work that may have been done and sever connection to server.	 
+2	 
+Cody/DaShaun
+Acceptance Criteria: If this user story is implemented successfully, a user should be able to log out successfully from the app and be returned to the login screen without crashing.
+ 
+
+
+User Story: As a developer I want to ensure that the user is able to configure the information on their user profile.
+Task Description	Estimated Time (Hours)	Owner
+A REST resource class that accepts user profile input from the frontend.	 
+5	 
+Abby
+A REST resource class that parses the user profile input and stores it into the Database in JSON format.	
+4	
+Simone/Abby
+Database needs a new table for the user profile information, and stored user's profile picture.	
+3	 
+Simone
+Create a homepage that the user can edit that displays their name, profile picture, rank, and upcoming events.	
+4	
+Cody
+Acceptance Criteria: If this user story is implemented successfully, the user should be able to edit their profile information and view the information on their profile.
+ 
+ 
+User Story: As a developer I want to create a system for scheduling that allows users to create and commit to events.
+Task Description	Estimated Time (Hours)	Owner
+A REST resource class that accepts user input for creating a new event. 	 
+3	 
+Abby
+A REST resource class that accepts user input for accepting/declining the invitation to an event.	
+3	
+Abby
+A REST resource class that parses the user events and stores them in the database. Also, it stores the others users which were invited and whether they accepted/declined.	 
+6	 
+Abby/Simone
+A REST resource class that notifies users of events they are invited to (include the description of event, date, time)	
+6	
+Abby/Simone
+Create a database table that stores events, time and day of event, who is invited and who has committed to the event.	 
+4	 
+Simone
+Create a button on the homepage that links to a page that allows the user to create and schedule new events as well as a calendar that will keep track of said events.	
+8	
+Cody/DaShaun
+Acceptance Criteria: If this story is implemented successfully, a user will be able to create, view and invite people to events. 
+ 
+
+
+User Story: As a developer, I want the user to be able to input peer rankings.  
+Task Description	Estimated Time (Hours)	Owner
+A REST resource class that accepts the user peer ranking input.	 
+5	 
+Abby 
+A REST resource class that parses the user peer ranking input and stores it in the database.	 
+5 	 
+Simone/Abby
+Create database to store the peer rankings that were submitted to assess each user.	 
+6	 
+Simone
+Create a button on the homepage that links to a page to input the current ranking of the user	 
+4	 
+DaShaun
+Acceptance Criteria: If this story is implemented correctly, the user will be able to navigate from their homepage to a screen where they can input their ranking weekly.
+
+User Story: As a developer, I want the user to be able to add their flight to their profile. 
+Task Description	Estimated Time (Hours)	Owner
+A REST resource class that upon login, communicates with the store the user within their flight	 
+3 	 
+Abby 
+A REST resource class that parses the flights and the users who are members of the flights	 
+6	 
+Simone/Abby
+Create database to store the name of each flight as well as each user’s information, such as name and username, in that flight	 
+4	 
+Simone
+Create a button on the homepage that links to a page to input the current flight of the user	 
+4	 
+DaShaun
+Acceptance Criteria: If this story is implemented correctly, the user will be able to navigate from their homepage to a screen where they can input their ranking weekly.
+ 
+
+Remaining Backlog
+Functional Requirements: 
+Account Management:
+1.	As a developer I would like an account with the privileges of an administrator
+2.	As an administrator I would like users to enter their Purdue career accounts to distinguish between the roles of cadet and flight commander
+3.	As an administrator I would like to automatically designate the roles of cadet and flight commander to each user account
+4.	As an administrator I would like to delete profiles for cadets that drop out of the ROTC program
+5.	As a user I would like the ability to distinguish roles in the application, which users are cadets and which users are flight commanders User Profile Management:
+6.	As a user I would like the ability to locate my username and password if I forgot either or
+7.	As a developer I would like the users to have the ability to change their password
+8.	As a user with flight commander privileges I would like to view all of the information on a cadet’s user profile at any time
+9.	  As a user I would like GPA, ranking, PFA scores and other private information to not be viewable by other cadets
+10.	  As a developer I would like user feedback
+11.	  As a developer I would like to switch the application to offline mode if no wifi/cellular data connection is detected 
+Grade Management: 
+14.	As a user I would like to view my flight ranking and ROTC course grades from past semesters
+15.	 As an administrator I would like to compute the average peer ranking for each cadet 
+
+Messaging Management:
+ 
+19.	 As a user I would like to be able to privately message our flight commander directly or other cadets within my flight
+
+Event Management:
+21.	  As a user I would like to be able to post public announcements, and links to other pages as necessary.
+22.	  As a user I would like to automatically notify cadets within my flight of announcements that I post
+23.	  As a developer I would like the application to send reminders to the user’s phone of events they committed to attending
+24.	  As a user I would like to specify how many notifications the application will send, and at what times
+Non-Functional:  
+1.	  As a developer I would like the system to experience only one crash per ten weeks
+2.	 As a user I would like to ensure the application is secure
+3.	 As a developer I would like the application run efficiently and quickly, the server response time should be 500ms or less.
+4.	As a developer I would like to allow users to download this application for free
+5.	 As a developer I would like to ensure that future features are not overly difficult to implement into the existing system.
+6.	As a developer I would like the system to be able to handle 50 users at once.
+7.	As a developer I would like to be able to transfer this application to not only be mobile but also web applicable
+8.	As a developer I would like to have public documentation for the API methods
