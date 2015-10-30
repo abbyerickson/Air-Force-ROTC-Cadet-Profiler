@@ -20,7 +20,35 @@ Cause app to save any work that may have been done and sever connection to serve
 Cody/DaShaun
 Acceptance Criteria: If this user story is implemented successfully, a user should be able to log out successfully from the app and be returned to the login screen without crashing.
  
+User story: As a developer, I want to implement account privileges for different accounts
+Task Description    Estimated Time (Hours)   Owner
+When user registers store field for Cadet or Flight Commander
+Abby
+2
+Create field in database to store account privilege
+Simone
+2
+When user views profile only allowed infomration is shown
+Dashaun/Cody
+3
+Only allow users to call rest methods if they have appropriate privileges
+Abby/Simone
+5
 
+User Story: As a developer, I want to input grades
+Task Description    Estimated Time (Hours)   Owner
+Create fields in Edit profile screen to input grades
+Cody/Dashaun
+2
+Only allow Flight Commanders to input grades
+Abby
+2
+Only allow Flight Commanders and Cadets to view their own grades
+Abby/Simone
+2
+Create database to store cadet's grades
+Simone
+2
 
 User Story: As a developer I want to ensure that the user is able to configure the information on their user profile.
 Task Description	Estimated Time (Hours)	Owner
