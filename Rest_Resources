@@ -112,3 +112,41 @@ public class Register {
     } 
 }
 
+package com.prgguru.jersey;
+
+import java.sql.SQLException;
+
+public class EditProfile {
+    private int updateInfo(String name, String year, String major){
+        System.out.println("Inside editProfile");
+        int result = 3;
+            try {
+                if(DBConnection.insertUser(name, uname, pwd)){
+                    System.out.println("RegisterUSer if");
+                    result = 0;
+                }
+            } catch(SQLException sqle){
+                System.out.println("RegisterUSer catch sqle");
+                //When Primary key violation occurs that means user is already registered
+                if(sqle.getErrorCode() == 1062){
+                    result = 1;
+                } 
+                //When special characters are used in name,username or password
+                else if(sqle.getErrorCode() == 1064){
+                    System.out.println(sqle.getErrorCode());
+                    result = 2;
+                }
+            }
+            catch (Exception e) {
+                // TODO Auto-generated catch block
+                System.out.println("Inside checkCredentials catch e ");
+                result = 3;
+            }
+        }else{
+            System.out.println("Inside checkCredentials else");
+            result = 3;
+        }
+ 
+        return result;
+    }
+}
