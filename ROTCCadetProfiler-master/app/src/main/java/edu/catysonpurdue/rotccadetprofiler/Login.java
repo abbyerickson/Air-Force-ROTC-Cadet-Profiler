@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class LoginActivity extends ActionBarActivity implements View.OnClickListener {
+public class Login extends ActionBarActivity implements View.OnClickListener {
     Button bLogin;
     TextView registerLink;
     EditText etUsername, etPassword;
@@ -45,7 +45,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                 authenticate(user);
                 break;
             case R.id.tvRegisterLink:
-                Intent registerIntent = new Intent(LoginActivity.this, Register.class);
+                Intent registerIntent = new Intent(Login.this, Register.class);
                 startActivity(registerIntent);
                 break;
         }
@@ -66,7 +66,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     }
 
     private void showErrorMessage() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(LoginActivity.this);
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Login.this);
         dialogBuilder.setMessage("Incorrect user details");
         dialogBuilder.setPositiveButton("Ok", null);
         dialogBuilder.show();

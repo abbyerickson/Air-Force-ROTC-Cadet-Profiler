@@ -6,19 +6,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
+
 
 public class Register extends ActionBarActivity implements View.OnClickListener{
-    EditText etName, etUsername, etPassword;
+    EditText etEmail, etUsername, etPassword;
     Button bRegister;
-    String etRank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etName = (EditText) findViewById(R.id.etName);
+        etEmail = (EditText) findViewById(R.id.etEmail);
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         bRegister = (Button) findViewById(R.id.bRegister);
@@ -30,28 +29,12 @@ public class Register extends ActionBarActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bRegister:
-                String email = etName.getText().toString();
+                String email = etEmail.getText().toString();
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
-                String rank = etRank;
 
-                User user = new User(email, username, password, rank);
+                User user = new User(email, username, password);
                 registerUser(user);
-                break;
-        }
-    }
-    public void onRadioButtonClicked(View view){
-        boolean checked = ((RadioButton) view).isChecked();
-        switch(view.getId()){
-            case R.id.cadet:
-                if(checked){
-                    etRank = "cadet";
-                }
-                break;
-            case R.id.flightCommander:
-                if(checked){
-                    etRank = "Flight Commander";
-                }
                 break;
         }
     }
@@ -61,7 +44,7 @@ public class Register extends ActionBarActivity implements View.OnClickListener{
         serverRequest.storeUserDataInBackground(user, new GetUserCallback() {
             @Override
             public void done(User returnedUser) {
-                Intent loginIntent = new Intent(Register.this, LoginActivity.class);
+                Intent loginIntent = new Intent(Register.this, Login.class);
                 startActivity(loginIntent);
             }
         });

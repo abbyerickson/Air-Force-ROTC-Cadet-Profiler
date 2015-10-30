@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class ServerRequests {
     ProgressDialog progressDialog;
     public static final int CONNECTION_TIMEOUT = 1000 * 15;
-    public static final String SERVER_ADDRESS = "our307project.hostzi.com";
+    public static final String SERVER_ADDRESS = "http://our307project.hostzi.com";
 
     public ServerRequests(Context context) {
         progressDialog = new ProgressDialog(context);
@@ -62,10 +62,10 @@ public class ServerRequests {
         @Override
         protected Void doInBackground(Void... params) {
             ArrayList<NameValuePair> dataToSend = new ArrayList<>();
-            dataToSend.add(new BasicNameValuePair("name", user.email));
+            dataToSend.add(new BasicNameValuePair("email", user.email));
             dataToSend.add(new BasicNameValuePair("username", user.username));
             dataToSend.add(new BasicNameValuePair("password", user.password));
-            dataToSend.add(new BasicNameValuePair("rank", user.rank));
+            dataToSend.add(new BasicNameValuePair("age", user.age + ""));
 
             HttpParams httpRequestParams = getHttpRequestParams();
 
@@ -115,7 +115,6 @@ public class ServerRequests {
             ArrayList<NameValuePair> dataToSend = new ArrayList<>();
             dataToSend.add(new BasicNameValuePair("username", user.username));
             dataToSend.add(new BasicNameValuePair("password", user.password));
-            dataToSend.add(new BasicNameValuePair("rank", user.rank));
 
             HttpParams httpRequestParams = new BasicHttpParams();
             HttpConnectionParams.setConnectionTimeout(httpRequestParams,
@@ -139,10 +138,10 @@ public class ServerRequests {
 
                 if (jObject.length() != 0){
                     Log.v("happened", "2");
-                    String name = jObject.getString("name");
+                    String email = jObject.getString("email");
 
-                    returnedUser = new User(name, user.username,
-                            user.password, user.rank);
+                    returnedUser = new User(email, user.username,
+                            user.password);
                 }
 
             } catch (Exception e) {

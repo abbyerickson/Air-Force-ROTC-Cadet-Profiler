@@ -3,6 +3,9 @@ package edu.catysonpurdue.rotccadetprofiler;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/**
+ * Created by tundealao on 29/03/15.
+ */
 public class UserLocalStore {
 
     public static final String SP_NAME = "userDetails";
@@ -15,10 +18,9 @@ public class UserLocalStore {
 
     public void storeUserData(User user) {
         SharedPreferences.Editor userLocalDatabaseEditor = userLocalDatabase.edit();
-        userLocalDatabaseEditor.putString("name", user.email);
+        userLocalDatabaseEditor.putString("email", user.email);
         userLocalDatabaseEditor.putString("username", user.username);
         userLocalDatabaseEditor.putString("password", user.password);
-        userLocalDatabaseEditor.putString("rank", user.rank);
         userLocalDatabaseEditor.commit();
     }
 
@@ -39,11 +41,10 @@ public class UserLocalStore {
             return null;
         }
 
-        String name = userLocalDatabase.getString("name", "");
+        String email = userLocalDatabase.getString("email", "");
         String username = userLocalDatabase.getString("username", "");
         String password = userLocalDatabase.getString("password", "");
-        String rank = userLocalDatabase.getString("rank", "");
-        User user = new User(name, username, password, rank);
+        User user = new User(email, username, password);
         return user;
     }
 }

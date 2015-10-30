@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
     UserLocalStore userLocalStore;
-    EditText etName, etUsername, etRank;
+    EditText etEmail, etUsername;
     Button bLogout;
 
     @Override
@@ -20,8 +20,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         etUsername = (EditText) findViewById(R.id.etUsername);
-        etName = (EditText) findViewById(R.id.etName);
-        etRank = (EditText) findViewById(R.id.etRank);
+        etEmail = (EditText) findViewById(R.id.etEmail);
         bLogout = (Button) findViewById(R.id.bLogout);
 
         bLogout.setOnClickListener(this);
@@ -35,7 +34,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.bLogout:
                 userLocalStore.clearUserData();
                 userLocalStore.setUserLoggedIn(false);
-                Intent loginIntent = new Intent(this, LoginActivity.class);
+                Intent loginIntent = new Intent(this, Login.class);
                 startActivity(loginIntent);
                 break;
         }
@@ -51,7 +50,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     private boolean authenticate() {
         if (userLocalStore.getLoggedInUser() == null) {
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, Login.class);
             startActivity(intent);
             return false;
         }
@@ -61,7 +60,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private void displayUserDetails() {
         User user = userLocalStore.getLoggedInUser();
         etUsername.setText(user.username);
-        etName.setText(user.email);
-        etRank.setText(user.rank);
+        etEmail.setText(user.email);
     }
 }
