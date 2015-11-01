@@ -54,7 +54,7 @@ public class EditProfileActivity extends Activity{
 	 * 
 	 * @param view
 	*/
-	public void registerUser(View view){
+	public void editProfile(View view){
 		// Get Name ET control value
 		String name = nameET.getText().toString();
 		// Get Year ET control value
