@@ -116,37 +116,51 @@ package com.prgguru.jersey;
 
 import java.sql.SQLException;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+//Path: http://localhost/<appln-folder-name>/editprofile
+@Path("/editprofile")
 public class EditProfile {
+	// HTTP Get Method
+    @GET
+    // Path: http://localhost/<appln-folder-name>/editprofile/doedit
+    @Path("/doedit")  
+    // Produces JSON as response
+    @Produces(MediaType.APPLICATION_JSON) 
+    // Query parameters are parameters: http://localhost/<appln-folder-name>/register/doregister?name=pqrs&year=abc&major=xyz
+    public String doEdit(@QueryParam("name") String name, @QueryParam("year") String year, @QueryParam("major") String major){
+        String response = "";
+        //System.out.println("Inside doLogin "+uname+"  "+pwd);
+        int retCode = updateInfo(name, year, major);
+        if(retCode == 0){
+            response = Utility.constructJSON(name, year, major);
+        }else if(retCode == 1){
+            response = Utility.constructJSON("edit", false, "Error occured");
+        }
+        return response;
+ 
+    }
     private int updateInfo(String name, String year, String major){
         System.out.println("Inside editProfile");
-        int result = 3;
+        int result = 1;
             try {
-                if(DBConnection.insertUser(name, uname, pwd)){
-                    System.out.println("RegisterUSer if");
+                if(DBConnection.insertProfInfo(name, year, major)){
+                    System.out.println("EditProfile if");
                     result = 0;
-                }
-            } catch(SQLException sqle){
-                System.out.println("RegisterUSer catch sqle");
-                //When Primary key violation occurs that means user is already registered
-                if(sqle.getErrorCode() == 1062){
-                    result = 1;
-                } 
-                //When special characters are used in name,username or password
-                else if(sqle.getErrorCode() == 1064){
-                    System.out.println(sqle.getErrorCode());
-                    result = 2;
                 }
             }
             catch (Exception e) {
                 // TODO Auto-generated catch block
                 System.out.println("Inside checkCredentials catch e ");
-                result = 3;
+                result = 1;
             }
-        }else{
+        /*else{
             System.out.println("Inside checkCredentials else");
-            result = 3;
-        }
- 
+            result = 1;
+        }*/
         return result;
     }
 }
