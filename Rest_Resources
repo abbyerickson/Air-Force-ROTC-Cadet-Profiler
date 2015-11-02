@@ -136,9 +136,9 @@ public class EditProfile {
         //System.out.println("Inside doLogin "+uname+"  "+pwd);
         int retCode = updateInfo(name, year, major);
         if(retCode == 0){
-            response = Utility.constructJSON(name, year, major);
+            response = Utility.constructJSON(name, year, major, true);
         }else if(retCode == 1){
-            response = Utility.constructJSON("edit", false, "Error occured");
+            response = Utility.constructJSON("edit", false, "Error Occured");
         }
         return response;
  
