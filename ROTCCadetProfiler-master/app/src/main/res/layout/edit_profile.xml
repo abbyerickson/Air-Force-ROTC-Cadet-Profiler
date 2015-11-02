@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,26 +7,42 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <!-- Name Label -->
     <TextView
         android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- Name TextField -->
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <!-- Year Label -->
     <TextView
-        android:text="Email"
+        android:text="Year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- Year TextField -->
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <!-- Major Label -->
+    <TextView
+        android:text="Major"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Major TextField -->
+    <EditText
+        android:id="@+id/etMajor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
     <TextView
         android:text="Bio"
         android:layout_width="wrap_content"
@@ -42,8 +59,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sace Changes"
-        android:id="@+id/button2"
+        android:text="Save Changes"
+        android:id="@+id/btnSaveChanges"
+        android:onClick="navigatetoEditProfileActivity"
         android:layout_gravity="center_horizontal" />
 
 
