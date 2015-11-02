@@ -6,6 +6,7 @@ public class Constants {
 	    public static String dbUrl = "jdbc:mysql://localhost/"+dbName;
 	    public static String dbUser = "root";
 	    public static String dbPwd = "";
+	    public static String currUser = "";
 }
 
 package com.prgguru.jersey;
