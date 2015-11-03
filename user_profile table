@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `user` (
+  `FirstName` varchar(255) NOT NULL,
+  `LatName` varchar(255) NOT NULL,
+  `Year` varchar(50) NOT NULL,
+  `Major' varchar(50) NOT NULL, 
+  'Flight' varchar(255) NOT NULL, 
+  'PhoneNumber varchar(255) NOT NULL,
+  'Email' varchar(255) NOT NULL,
+  PRIMARY KEY (`username`)
+)
