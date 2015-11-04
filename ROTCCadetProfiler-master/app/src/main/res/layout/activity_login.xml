@@ -56,6 +56,6 @@
         android:layout_height="match_parent"
         android:id="@+id/imageView"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/usaf_logo" />
+        android:src="@drawable/af_logo_wings" />
 
 </LinearLayout>
