@@ -124,4 +124,106 @@ public class DBConnection {
         }
         return insertStatus;
     }
+    
+    	/**
+	 * Method to insert Profile Info into DB
+	 * 
+	 * @param name
+	 * @param year
+	 * @param major
+	 * @return
+	 * @throws SQLException
+	 * @throws Exception
+	 */
+	public static boolean insertProfInfo(String name, String rank, String flight, String year, String major, String phone) throws SQLException, Exception {
+	    boolean insertStatus = false;
+	    Connection dbConn = null;
+	    try {
+	        try {
+	            dbConn = DBConnection.createConnection();
+	        } catch (Exception e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+	        Statement stmt = dbConn.createStatement();
+	        String query = "UPDATE user SET name = '" +name+ "', rank = '" +rank+ "', flight = '" +flight+ "', year = '" +year+ "', major = '"
+	        		+major+ "', phone = '" +phone+ "' WHERE username = '" +Constants.currUser+ "'";
+	        System.out.println(query);
+	        int records = stmt.executeUpdate(query);
+	        //System.out.println(records);
+	        //When record is successfully inserted
+	        if (records > 0) {
+	            insertStatus = true;
+	        }
+	    } catch (SQLException sqle) {
+	        //sqle.printStackTrace();
+	        throw sqle;
+	    } catch (Exception e) {
+	        //e.printStackTrace();
+	        // TODO Auto-generated catch block
+	        if (dbConn != null) {
+	            dbConn.close();
+	        }
+	        throw e;
+	    } finally {
+	        if (dbConn != null) {
+	            dbConn.close();
+	        }
+	    }
+	    return insertStatus;
+	}
+	
+	/**
+	 * Method to retrieve Profile Info from DB
+	 * 
+	 * @return
+	 * @throws SQLException
+	 * @throws Exception
+	 */
+	public static String[] retrieveProfInfo() throws SQLException, Exception {
+	    Connection dbConn = null;
+	    String [] profInfo = new String[6]; 
+	    try {
+	        try {
+	            dbConn = DBConnection.createConnection();
+	        } catch (Exception e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+	        Statement stmt = dbConn.createStatement();
+	        String query = "SELECT * FROM user WHERE username = '" +Constants.currUser+ "'";
+	        System.out.println(query);
+	        ResultSet rs = stmt.executeQuery(query);
+	        //When row is successfully extracted
+	        int i = 0;
+	        if (rs.next() == true) {
+	            String s = rs.getString("name");
+	            profInfo[i++] = s;
+	            s = rs.getString("rank");
+	            profInfo[i++] = s;
+	            s = rs.getString("flight");
+	            profInfo[i++] = s;
+	            s = rs.getString("year");
+	            profInfo[i++] = s;
+	            s = rs.getString("major");
+	            profInfo[i++] = s;
+	            s = rs.getString("phone");
+	            profInfo[i++] = s;
+	        }
+	    } catch (SQLException sqle) {
+	        throw sqle;
+	    } catch (Exception e) {
+	        //e.printStackTrace();
+	        // TODO Auto-generated catch block
+	        if (dbConn != null) {
+	            dbConn.close();
+	        }
+	        throw e;
+	    } finally {
+	        if (dbConn != null) {
+	            dbConn.close();
+	        }
+	    }
+	    return profInfo;
+	}
 }
