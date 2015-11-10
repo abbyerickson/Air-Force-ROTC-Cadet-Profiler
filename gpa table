@@ -1,0 +1,4 @@
+CREATE TABLE gpa ( 
+  GPA double, 
+  user int NOT NULL PRIMARY KEY
+)
