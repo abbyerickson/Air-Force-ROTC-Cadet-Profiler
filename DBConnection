@@ -135,7 +135,7 @@ public class DBConnection {
 	 * @throws SQLException
 	 * @throws Exception
 	 */
-	public static boolean insertProfInfo(String name, String rank, String flight, String year, String major, String phone) throws SQLException, Exception {
+	public static boolean insertProfInfo(String name, String rank, String flight, String year, String major, String phone, String GPA) throws SQLException, Exception {
 	    boolean insertStatus = false;
 	    Connection dbConn = null;
 	    try {
@@ -147,7 +147,7 @@ public class DBConnection {
 	        }
 	        Statement stmt = dbConn.createStatement();
 	        String query = "UPDATE user SET name = '" +name+ "', rank = '" +rank+ "', flight = '" +flight+ "', year = '" +year+ "', major = '"
-	        		+major+ "', phone = '" +phone+ "' WHERE username = '" +Constants.currUser+ "'";
+	        		+major+ "', phone = '" +phone+ "',GPA = '" +GPA+ "' WHERE username = '" +Constants.currUser+ "'";
 	        System.out.println(query);
 	        int records = stmt.executeUpdate(query);
 	        //System.out.println(records);
@@ -208,6 +208,8 @@ public class DBConnection {
 	            s = rs.getString("major");
 	            profInfo[i++] = s;
 	            s = rs.getString("phone");
+	            profInfo[i++] = s;
+	             s = rs.getString("GPA");
 	            profInfo[i++] = s;
 	        }
 	    } catch (SQLException sqle) {
