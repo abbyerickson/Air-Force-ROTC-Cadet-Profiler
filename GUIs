@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <!-- Name Label -->
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Name TextField -->
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+     <!-- Rank Label -->
+    <TextView
+        android:text="Rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Name TextField -->
+    <EditText
+        android:id="@+id/etRank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <!-- Flight Label -->
+    <TextView
+        android:text="Flight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Year TextField -->
+    <EditText
+        android:id="@+id/etFlight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <!-- Year Label -->
+    <TextView
+        android:text="Year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Year TextField -->
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Major Label -->
+    <TextView
+        android:text="Major"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Major TextField -->
+    <EditText
+        android:id="@+id/etMajor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+     <!-- Phone Label -->
+    <TextView
+        android:text="Phone Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Name TextField -->
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:id="@+id/btnSaveChanges"
+        android:onClick="editProfile"
+        android:layout_gravity="center_horizontal" />
+    
+    <Button
+        android:id="@+id/btnLinkToHomeScreen"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@null"
+        android:onClick="navigatebacktoHomeActivity"
+        android:text="Home"
+        android:textColor="#1E88E5"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.prgguru.example.HomeActivity"
+    tools:ignore="MergeRootFrame" >
+ 
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dip" >
+ 
+    	<TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_gravity="fill_vertical"
+	        android:layout_marginTop="20pt"
+	        android:gravity="center_horizontal"
+	        android:text="Welcome User"
+	        android:textSize="25dip" />
+	    
+	    <Button
+	        android:id="@+id/btnViewProfileScreen"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:background="#1E88E5"
+	        android:onClick="navigatetoViewProfileActivity"
+	        android:text="View Profile"
+	        android:textColor="#fff" />
+	    
+	    <Button
+	        android:id="@+id/btnEditProfileScreen"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:background="#1E88E5"
+	        android:onClick="navigatetoEditProfileActivity"
+	        android:text="Edit Profile"
+	        android:textColor="#fff" />
+	    
+	    <Button
+	        android:id="@+id/btnUploadGradesScreen"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:background="#1E88E5"
+	        android:text="Upload Grades"
+	        android:textColor="#fff" />
+	    
+	    <Button
+	        android:id="@+id/btnLogout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:background="#1E88E5"
+	        android:onClick="navigatebacktoLoginActivity"
+	        android:text="Logout"
+	        android:textColor="#fff" />
+	    
+    </LinearLayout>
+ </ScrollView>
